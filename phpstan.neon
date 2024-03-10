@@ -1,0 +1,20 @@
+includes:
+    - ./vendor/larastan/larastan/extension.neon
+
+parameters:
+    excludePaths:
+        analyse:
+            - %currentWorkingDirectory%/tests
+
+    ignoreErrors:
+            - '#Parameter \#1 \$callback of method Illuminate\\Support\\Collection<int,App\\Models\\OrderItem>::transform\(\) expects callable\(App\\Models\\OrderItem, int\): App\\Models\\OrderItem, Closure\(App\\Models\\OrderItem\): App\\Models\\Product given.#'
+    noUnnecessaryCollectionCall: false
+    checkGenericClassInNonGenericObjectType: false
+    paths:
+        - app
+
+    # The level 9 is the highest level
+    level: 6
+
+    checkMissingIterableValueType: false
+    treatPhpDocTypesAsCertain: false
